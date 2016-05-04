@@ -11,7 +11,7 @@ static void destroy(GtkWidget *widget, gpointer data )
 int main(int argc, char **argv)
 {
   if(argc != 6) {
-    printf("Usage: %s x y width height URL\n");
+    printf("Usage: %s x y width height URL\n", argv[0]);
     return 1;
   }
 
