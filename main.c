@@ -10,8 +10,8 @@ static void destroy(GtkWidget *widget, gpointer data )
 
 int main(int argc, char **argv)
 {
-  if(argc != 6) {
-    printf("Usage: %s x y width height URL\n", argv[0]);
+  if(argc != 7) {
+    printf("Usage: %s x y width height zoom URL\n", argv[0]);
     return 1;
   }
 
@@ -19,7 +19,8 @@ int main(int argc, char **argv)
   const int y = atoi(argv[2]);
   const int w = atoi(argv[3]);
   const int h = atoi(argv[4]);
-  const char *url = argv[5];
+  const int zoom = atoi(argv[5]);
+  const char *url = argv[6];
 
   gtk_init(&argc, &argv);
 
@@ -45,6 +46,7 @@ int main(int argc, char **argv)
   webkit_web_view_load_uri((WebKitWebView*)webview, url);
   GdkRGBA trs = {1.0, 1.0, 1.0, 0.0};
   webkit_web_view_set_background_color((WebKitWebView*)webview, &trs);
+  webkit_web_view_set_zoom_level((WebKitWebView*)webview, zoom/100.0);
 
   g_signal_connect(window, "destroy", G_CALLBACK(destroy), NULL);
 

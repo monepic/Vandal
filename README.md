@@ -10,15 +10,15 @@ Usage
 
 ### Syntax
 
-    vandal X Y WIDTH HEIGHT URL
+    vandal X Y WIDTH HEIGHT ZOOM% URL
 
 ### Display remote html
 
-    vandal 0 0 800 600 http://example.com/widget.html
+    vandal 0 0 800 600 100 http://example.com/widget.html
 
 ### Display a local file
 
-    vandal 920 0 1000 300 file:///home/user/widget.html
+    vandal 920 0 1000 300 100 file:///home/user/widget.html
 
 
 Recipes
